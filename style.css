@@ -1,0 +1,188 @@
+/* Все теги по умолчанию имеют свои свойства в зависимости от бразуера и их перед началом работы надо сбрасывать чтобы ничего не мешало друг другу */
+
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,*:before, *:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Убираем обводки линий некоторых браузеров */
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+/* Делаем эти теги блочными */
+nav, footer, header, aside{display: block;}
+
+/* Уравнивают параметры шрифтов и элементов для разных браузеров */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Просим наследовать наш подключенный шрифт */
+input, button, textarea {font-family: inherit;}
+
+/* Убирают некоторые особенности в разных браузерах */
+input::-ms-clear {display: none;}
+button {cursor: pointer;}
+button::-moz-focus-inner {padding: 0; border: 0;}
+a, a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+ul li{list-style: none;}
+img {vertical-align: top;}
+
+/* Обнуляем все заголовки h */
+h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
+
+
+body { /* 1) Делаем нашу страницу цвета по макету */
+  background: #e8e8e8 url('../img/bg.png') 50% 130px no-repeat; /* 30) И в конце добавляем фон на наш боди (50% значит по середине и 100px отступ вниз) и переместили свойство цвета которое было для фона сюдаже в одно свойство из пункта 1) */
+}
+
+
+.content { 
+  padding: 168px 0px 137px 0px; /* 2) Делаем отступы нашего контента сверху и снизу сразу */
+  max-width: 841px; /* 3) выставили максимальную ширину по ширине максиального элемента по макету (в данном случае по картинке) */
+  margin: 0px auto; /* 4) Выравнивает весь контент по середине, работает когда есть ограничение по ширине  max-width: 841px; */
+}
+
+
+.content-top {
+  text-align: center; /* 7) Чтобы не назначать одинаковые свойства каждому элементу можно сразу указать в общий блок в данном случае выравнивание по центру текст */
+  margin: 0 0 70px 0; /* 10) Отступ от картинки до текста ставим по макету */
+}
+.content-top__category { /* 5) Назначаю для первого заголовка свойства по макету или авокоду */
+  color: #748187;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+  margin: 0 0 15px 0;
+}
+.content-top__title { /* 6) Назначаю для второго заголовка свойства по макету или авокоду */
+  color: #273d46;
+  font-size: 36px;
+  line-height: 50pX;
+  max-width: 725px; /* 8) Задал по макету ограничение по ширине контента чтобы слова переходили на новую строчку как надо, либо в html можно поставить br */
+  margin: 0px auto; /* 9) Также надо центровать после задания max-width: 725px;  */
+}
+
+
+.content-image { /* 11) Граница вокруг картинки ввиде белого фона */
+box-shadow: 0 15px 65px rgba(15, 16, 16, 0.15);
+background-color: white;
+padding: 10px;
+margin: 0 0 85px 0; /* 15) Указываю отступ вниз от кратинки */
+}
+
+.content-image img{ /* 12) Обратились отельно к картинке внутри блока и задали max-width: 100%; указав что она может быть не шире 100% родителя, чтобы потом если поменять картинку на более широкую, верстка не сломалось, а подстроилась под блок*/
+  max-width: 100%;
+}
+
+
+.content-bottom {
+  padding: 0 45px; /* 16) Отступ от абзатцев слева и справа */
+}
+.content-bottom__text { /* 13) по макету вставляем параметры для наших абзатцев */
+  color: #53646b;
+  font-size: 24px;
+  line-height: 40px;
+  margin: 0 0 48px 0; /* 24) Отуступаем до нашего списка от параграфа вниз */
+}
+
+.content-bottom__text p{ /* 14) Добавляем для наших абзатцев отступ друг от друга вниз */
+  margin: 0 0 40px 0;
+}
+
+.content-bottom__text p:last-child{ /* 23) Делают для последнего абзатца отступ ноль, чтобы не было лишнего отступа вниз, и таким способом можно добавлять сколько угодно ещё абзатцев и все будет работать корректно */
+  margin: 0;
+}
+
+.content-botton-info {
+  padding: 0 45px;
+}
+
+.content-bottom-info-list {
+  margin: 0 0 59px 0; /* 27) Отступаем вниз на 50 пикселей от ли до иконки */
+}
+
+.content-bottom-info-list li{ /* 17) Обращаемся ко всем ли (Смотрим на общие параметры и помещаем их в один блок) */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 0 0 15px 0; /* 20) Между ли делаем отступы */
+  background: url('../img/icons/li.svg') left no-repeat; /* 21) Задали иконки напротив li */
+  padding: 0 0 0 35px; /* 22) Задали отступ от иконок для отдаления li */
+}
+
+.content-bottom-info-list li:last-child{ /* 26) Также убираем отступ у последнего ли */
+  margin: 0;
+}
+
+.content-bottom-info-list li:nth-child(1){ /* 18) Обращаемся к каждому ли отдельно через псевдокласс (назначаем для каждого его особые параметры по макету)*/
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  color: #273d46;
+}
+
+.content-bottom-info-list li:nth-child(2){
+  color: #80b7b3;
+  font-style: italic;
+}
+
+.content-bottom-info-list li:nth-child(3){
+  color: #273d46;
+  font-weight: 700;
+}
+
+.content-bottom-info-list li:nth-child(4){
+  color: #273d46;
+  text-decoration: line-through;
+}
+
+.content-bottom-info-list li:nth-child(4) span{ /* 19) Сделали спан на 4 li в html и тут дали ему опасити чтобы потом когда добавим иконку она не становилась тоже прозрачной */
+  opacity: 0.3;
+}
+
+
+.content-bottom-info__link { /* 28_ задаем свойства для кнопки */
+  display: inline-block; /* так как строчный чтобы работала высота и остальные свойства */
+  line-height: 44px;
+  height: 44px;
+  padding: 0px 30px;
+  border-radius: 24px;
+  background-color: #80b7b3;
+  -webkit-box-shadow: 0px 5px 1px rgba(0, 0, 0, 0.5); /* 32) Переделали тень чтобы добавить эффект */
+  box-shadow: 0px 5px 1px rgba(0, 0, 0, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+}
+
+.content-bottom-info__link span{ /* 29) Добавляем стрелку которая была помещена в span */
+  padding: 0 30px 0 0;
+  background: url('../img/icons/line.png') right no-repeat;
+}
+
+.content-bottom-info__link:hover { /* 31) Доп свойства взаимодействия с кнопкой  (меняется цвет при наведении на кнопку)*/
+  background-color: #511e23;
+}
+
+.content-bottom-info__link:active { /* 33) Доп при клике по кнопке визуальный эффект её нажатия  (как 3д анимация) */
+  position: relative;
+  top: 3px; /* 34) Отступ сверху в 3 пикселя */
+  -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+}

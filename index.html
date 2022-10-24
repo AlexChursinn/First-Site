@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>First Site</title>
+  </head>
+  <body>
+    <!-- 1) Делим визуально наш макет на блоки и разбиваем их все на части -->
+    <!-- 2) Получили часть всего блока для полного макета -->
+    <div class="content">
+      <!-- Блок где будет вся наша страница -->
+      <!-- 3) Разбили нашу шапку на два заголовка -->
+      <div class="content-top">
+        <!-- Верхняя часть страницы у нас делится на 2 блока (два заголовка и для каждого из них задаем блок) -->
+        <div class="content-top__category">Travel</div>
+        <!-- Первый заголовок -->
+        <h1 class="content-top__title">
+          Donec sed odio dui. Cras mattis consectetur purus <br />
+          sit amet fermentum.
+        </h1>
+        <!-- Второй заголовок -->
+      </div>
+      <!-- 4) Подключаем нашу картнику на сайт как отдельный блок -->
+      <div class="content-image">
+        <img src="img/foto.jpg" alt="foto" />
+      </div>
+      <!-- 5) Блок для контента с двумя абзатцами -->
+      <div class="content-bottom">
+        <!-- Контент блок с двумя абзатцами -->
+        <div class="content-bottom__text">
+          <p>
+            Donec aredsed odio dui. Morbi leo risus, porta ac consectetur ac,
+            vestibulum at eros. Morbi leo risus, porta ac consectetur ac,
+            vestibulum at eros. Donec ullamcorper nulla non metus auctor
+            fringilla.
+          </p>
+          <p>
+            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+            vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+            venenatis vestibulum.
+          </p>
+        </div>
+      </div>
+      <!-- 6) Блок со списком и кнопка -->
+      <div class="content-botton-info">
+        <ul class="content-bottom-info-list">
+          <li>Put on this page information about your product</li>
+          <li>A detailed description of your product</li>
+          <li>Tell us about the advantages and merits</li>
+          <li><span>Associate the page with the payment system</span></li>
+        </ul>
+        <a class="content-bottom-info__link" target="_blank" href="#"
+          ><span>Full Story</span></a
+        >
+      </div>
+      <!-- <span> Full Story</span> Сделали спан потому что пригодится дальше когда будем вставлять туда стрелку (любую кнопку с иконкой в спан)-->
+    </div>
+    <!-- 7) Дальше копируем наши классы и переносим все в CSS -->
+  </body>
+</html>
